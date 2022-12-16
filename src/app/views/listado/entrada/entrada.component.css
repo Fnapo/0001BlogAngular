@@ -1,0 +1,16 @@
+.entrada {
+  background-color: aqua;
+  border-radius: 25px;
+  color: black;
+  width: 50%;
+  margin: auto;
+}
+
+.entrada:hover {
+  cursor: pointer;
+}
+
+.entrada * {
+  padding: 10px;
+  text-align: center;
+}

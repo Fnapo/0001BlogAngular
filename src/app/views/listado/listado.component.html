@@ -1,4 +1,6 @@
 <div id="listado">
-    <h3>Listado de Entradas al blog:</h3>
-    <app-entrada></app-entrada>
+  <h3>Listado de Entradas al blog:</h3>
+  <app-entrada *ngFor="let entrada of listadoEntradas"
+    [entrada]="entrada" (click)="mostrarTitulo(entrada.titulo)">
+  </app-entrada>
 </div>
