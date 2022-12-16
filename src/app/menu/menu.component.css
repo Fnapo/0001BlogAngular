@@ -1,0 +1,34 @@
+#menu {
+  background-color: orange;
+}
+
+#menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: left;
+}
+
+#menu li {
+  color: black;
+  float: left;
+}
+
+#menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+}
+
+#menu li a:hover {
+  background-color: brown;
+  color: white;
+}
+
+#menu li span {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#menu::after {
+  float: none;
+}
