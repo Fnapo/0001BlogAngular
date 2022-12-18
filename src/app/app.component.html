@@ -1,6 +1,6 @@
-<h1>
+<h1 *ngIf="!Ruta404()">
   Curso Básico de Angular
 </h1>
 
-<app-menu></app-menu>
-<app-listado></app-listado>
+<app-menu *ngIf="!Ruta404()"></app-menu>
+<router-outlet></router-outlet>

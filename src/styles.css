@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    height: 96vh;
+    height: 92vh;
     width: 100vw;
     background-color: lightgray;
     color: black;
-    margin: 2vh 0vw;
+    margin: 4vh 0vw;
 }
