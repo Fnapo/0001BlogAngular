@@ -7,8 +7,8 @@ import { IEntrada } from '../../../shared/interfaces/ientrada';
     styleUrls: ['./entrada.component.css']
 })
 export class EntradaComponent {
-    @Input()
-    public entrada: IEntrada = { titulo: "", resumen: "" }
+  @Input()
+  public entrada: any; // IEntrada = { titulo: "", resumen: "" }
 
     constructor() { }
 }

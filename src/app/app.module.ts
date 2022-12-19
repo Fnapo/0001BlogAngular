@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -10,19 +11,20 @@ import { PaginaNoEncontradaComponent } from './views/pagina-no-encontrada/pagina
 import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-nosotros.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    ListadoComponent,
-    EntradaComponent,
-    PaginaNoEncontradaComponent,
-    AcercaDeNosotrosComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MenuComponent,
+        ListadoComponent,
+        EntradaComponent,
+        PaginaNoEncontradaComponent,
+        AcercaDeNosotrosComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
