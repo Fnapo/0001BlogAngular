@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Usuario } from '../../shared/classes/usuario/usuario';
 import { LoginService } from '../../shared/services/login/login.service';
 import { Router } from '@angular/router';
@@ -9,12 +9,20 @@ import { AppComponent } from 'src/app/app.component';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+
+export class LoginComponent implements AfterViewInit {
     public usuario: Usuario = new Usuario();
+    @ViewChild("inputNombre")
+    inputNombre!: ElementRef;
     //public static readonly MITOKEN: string = "miToken";
 
     constructor(private loginService: LoginService, private router: Router) {
 
+    }
+    
+    ngAfterViewInit(): void {
+        const elemento = this.inputNombre.nativeElement;
+        elemento.focus();
     }
 
     public Submit(): void {

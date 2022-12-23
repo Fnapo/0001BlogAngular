@@ -1,4 +1,4 @@
-<div id="listado">
+<div id="listado" class="overflow-auto">
   <h3>Listado de Entradas al blog:</h3>
   <app-entrada *ngFor="let entrada of listadoEntradas"
     [entrada]="entrada" (click)="mostrarTitulo(entrada.title)">

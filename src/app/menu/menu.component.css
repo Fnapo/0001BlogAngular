@@ -21,17 +21,24 @@
   float: right;
 }
 
-#menu ul li a {
-  display: inline-block;
-  text-decoration: none;
+#menu ul li>* {
   color: inherit;
   padding: 10px;
+  display: inline-block;
 }
 
-#menu ul li:hover {
+#menu ul li a {
+  text-decoration: none;
+}
+
+#menu ul li button {
+  border: transparent;
+  background-color: transparent;
+}
+
+#menu ul li *:hover {
   background-color: brown;
   color: white;
-  cursor: pointer;
 }
 
 #menu li span {
