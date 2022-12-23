@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IEntrada } from '../../shared/interfaces/ientrada';
-import { EntradasService } from '../../shared/services/entradas.service';
+import { EntradasService } from '../../shared/services/entrada/entradas.service';
 
 @Component({
     selector: 'app-listado',

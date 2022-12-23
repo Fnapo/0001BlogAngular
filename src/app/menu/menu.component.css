@@ -1,32 +1,41 @@
 #menu {
   background-color: orange;
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
 }
 
 #menu ul {
   list-style: none;
-  display: flex;
-  justify-content: left;
+  width: 100%;
+  margin: 0;
+  padding-right: 40px;
 }
 
-#menu li {
+#menu ul li {
   color: black;
   float: left;
 }
 
-#menu li a {
+#menu ul li.acceso {
+  float: right;
+}
+
+#menu ul li a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
   padding: 10px;
 }
 
-#menu li a:hover {
+#menu ul li:hover {
   background-color: brown;
   color: white;
+  cursor: pointer;
 }
 
 #menu li span {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #menu::after {

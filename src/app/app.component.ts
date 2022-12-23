@@ -8,9 +8,19 @@ import { AppRoutingModule } from './app-routing.module';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    public static unToken: number = 0;
+    public static unNombre: string = "";
     title = 'P001Test';
 
     constructor(private router: Router) { }
+
+    public LeerToken(): number{
+        return AppComponent.unToken;
+    }
+
+    public LeerNombre(): string{
+        return AppComponent.unNombre;
+    }
 
     public Ruta404(): boolean {
         let salida: boolean = (this.router.url == AppRoutingModule.Pagina404);

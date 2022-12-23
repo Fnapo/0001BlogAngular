@@ -2,5 +2,5 @@
   Curso Básico de Angular
 </h1>
 
-<app-menu *ngIf="!Ruta404()"></app-menu>
+<app-menu *ngIf="!Ruta404()" [miToken]="LeerToken()" [nombreUsuario]="LeerNombre()"></app-menu>
 <router-outlet></router-outlet>

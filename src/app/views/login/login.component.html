@@ -1,0 +1,25 @@
+
+<div id="contenedor"  class="container">
+	<form (ngSubmit)="Submit()" #loginForm="ngForm">
+		<div class="col-md-4">
+			<label for="nombre" class="form-label col-12">Nombre:</label>
+			<input type="text" [(ngModel)]="usuario.nombre" name="nombre"
+				required #nombre="ngModel" class="form-control">
+			<div *ngIf="nombre.invalid && nombre.dirty" class="alert">
+				<div *ngIf="nombre.errors?.['required']"><span>Campo requerido</span></div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label for="contrasegna" class="form-label col-12">Nombre:</label>
+			<input type="password" [(ngModel)]="usuario.contrasegna" name="contrasegna"
+				required #contrasegna="ngModel" minlength="6" class="form-control">
+			<div *ngIf="contrasegna.invalid && contrasegna.dirty" class="alert">
+				<div *ngIf="contrasegna.errors?.['required']"><span>Campo requerido</span></div>
+				<div *ngIf="contrasegna.errors?.['minlength']"><span>Campo con al menos 6 caracteres</span></div>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary"
+        [disabled]="!loginForm.form.valid">Acceder</button>
+	</form>
+
+</div>
