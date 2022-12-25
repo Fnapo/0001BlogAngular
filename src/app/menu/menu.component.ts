@@ -1,47 +1,38 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponent } from '../app.component';
-import { LoginComponent } from '../views/login/login.component';
+import { TuplaLoginService } from '../shared/services/tuplaLogin/tupla-login.service';
+import { TuplaLogin } from '../shared/classes/tuplaLogin/tupla-login';
 
 @Component({
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
-    @Input()
-    public miToken: number = 0;
-    @Input()
-    public nombreUsuario: string = "";
 
-    constructor(private router: Router) {
-    }
-    /*
-        ngOnInit(): void {
-            this.LeerUsuario();
-        }*/
-    /*
-    private LeerUsuario(): void {
+export class MenuComponent implements OnInit {
+    private _token: number = 0;
+    private _nombreUsuario: string = "";
 
-        if (this.miToken > 0) {
-            let paso = localStorage.getItem("nombreUsuario");
-            if (paso) {
-                this.nombreUsuario = paso;
-            }
-            else {
-                this.miToken = 0;
-            }
-        }
+    constructor(private router: Router, private tuplaServicio: TuplaLoginService) {
     }
-    */
+
+    ngOnInit(): void {
+        this.tuplaServicio.tuplaLoginObs.subscribe((tupla: TuplaLogin) => {
+            this._token = tupla.token;
+            this._nombreUsuario = tupla.nombreUsuario;
+        });
+    }
+
+    public get nombreUsuario(): string {
+        return this._nombreUsuario;
+    }
+
+    public get token(): number {
+        return this._token;
+    }
 
     public logout() {
-        this.miToken = 0;
-        AppComponent.unToken = 0;
-        /*
-        if (localStorage.getItem(LoginComponent.MITOKEN)) {
-            localStorage.removeItem(LoginComponent.MITOKEN)
-        }*/
-        this.router.navigate(['/listado']);
+        this._token = 0;
+        this.router.navigate(['/sobreNosotros']);
     }
 }

@@ -4,8 +4,8 @@
 		<div class="col-md-6 mb-3 mx-auto">
 			<label for="nombre" class="form-label col-12">Nombre:</label>
 			<input type="text" [(ngModel)]="usuario.nombre" name="nombre" id="nombre"
-				required #nombre="ngModel" class="form-control" #inputNombre>
-			<div *ngIf="nombre.invalid && nombre.dirty" class="alert text-danger fw-bold">
+				required #nombre="ngModel" class="form-control mb-1" #inputNombre>
+			<div *ngIf="nombre.invalid && nombre.dirty" class="text-danger fw-bold my-0">
 				<div *ngIf="nombre.errors?.['required']"><span>Campo requerido</span></div>
 			</div>
 		</div>
@@ -13,7 +13,7 @@
 			<label for="contrasegna" class="form-label col-12">Contraseña:</label>
 			<input type="password" [(ngModel)]="usuario.contrasegna" name="contrasegna"
 				required #contrasegna="ngModel" minlength="6" class="form-control">
-			<div *ngIf="contrasegna.invalid && contrasegna.dirty" class="alert text-danger fw-bold">
+			<div *ngIf="contrasegna.invalid && contrasegna.dirty" class="text-danger fw-bold my-0">
 				<div *ngIf="contrasegna.errors?.['required']"><span>Campo requerido</span></div>
 				<div *ngIf="contrasegna.errors?.['minlength']"><span>Campo con al menos 6 caracteres</span></div>
 			</div>

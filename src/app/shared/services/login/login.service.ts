@@ -6,7 +6,7 @@ import { Usuario } from '../../classes/usuario/usuario';
     providedIn: 'root'
 })
 export class LoginService {
-    public miUsuario: Usuario = new Usuario();
+    private miUsuario: Usuario = new Usuario();
 
     constructor() {
         this.miUsuario.nombre = "paco";

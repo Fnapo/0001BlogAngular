@@ -2,7 +2,8 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Usuario } from '../../shared/classes/usuario/usuario';
 import { LoginService } from '../../shared/services/login/login.service';
 import { Router } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
+import { MenuComponent } from 'src/app/menu/menu.component';
+import { TuplaLoginService } from '../../shared/services/tuplaLogin/tupla-login.service';
 
 @Component({
     selector: 'app-login',
@@ -14,14 +15,13 @@ export class LoginComponent implements AfterViewInit {
     public usuario: Usuario = new Usuario();
     @ViewChild("inputNombre")
     inputNombre!: ElementRef;
-    //public static readonly MITOKEN: string = "miToken";
 
-    constructor(private loginService: LoginService, private router: Router) {
+    constructor(private loginService: LoginService, private router: Router,
+    private tuplaServicio: TuplaLoginService) { }
 
-    }
-    
     ngAfterViewInit(): void {
         const elemento = this.inputNombre.nativeElement;
+
         elemento.focus();
     }
 
@@ -33,11 +33,9 @@ export class LoginComponent implements AfterViewInit {
             complete: () => { }
         });
         if (paso > 0) {
-            //localStorage.setItem("nombreUsuario", this.usuario.nombre);
-            //localStorage.removeItem(LoginComponent.MITOKEN);
-            //localStorage.setItem(LoginComponent.MITOKEN, `${paso}`);
-            AppComponent.unToken = paso;
-            AppComponent.unNombre = this.usuario.nombre;
+            //MenuComponent.unToken = paso;
+            //MenuComponent.unNombre = this.usuario.nombre;
+            this.tuplaServicio.SetTuplaLogin(paso, this.usuario.nombre);
             this.router.navigate(["/listado"]);
         }
         else {
