@@ -1,6 +1,6 @@
 
-<div id="contenedor"  class="container text-center">
-	<form (ngSubmit)="Submit()" #loginForm="ngForm">
+<div id="contenedor"  class="container text-center h-75 d-flex align-items-center">
+	<form (ngSubmit)="Submit()" #loginForm="ngForm" role="form" class="w-100">
 		<div class="col-md-6 mb-3 mx-auto">
 			<label for="nombre" class="form-label col-12">Nombre:</label>
 			<input type="text" [(ngModel)]="usuario.nombre" name="nombre" id="nombre"

@@ -23,14 +23,22 @@ import { ListadoComponent } from './views/listado/listado.component';
 import { PaginaNoEncontradaComponent } from './views/pagina-no-encontrada/pagina-no-encontrada.component';
 import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-nosotros.component';
 import { LoginComponent } from './views/login/login.component';
+import { FrontComponent } from './views/front/front.component';
+import { EntradaDetallesComponent } from './views/entrada-detalles/entrada-detalles.component';
 
 let Pagina404: string = "pagina404";
 
 const routes: Routes = [
-    { path: "listado", component: ListadoComponent },
-    { path: "sobreNosotros", component: AcercaDeNosotrosComponent },
+    {
+        path: "front", component: FrontComponent, children: [ // rutas anidadas
+            { path: "listado", component: ListadoComponent },
+            { path: "sobreNosotros", component: AcercaDeNosotrosComponent },
+            { path: "entradaDetalles/:id", component: EntradaDetallesComponent },
+            { path: "", redirectTo: 'listado', pathMatch: 'full' }
+        ]
+    },
     { path: "login", component: LoginComponent },
-    { path: "", redirectTo: "/listado", pathMatch: "full" }, // Por defecto o primera ruta de acceso
+    { path: "", redirectTo: "front/listado", pathMatch: "full" }, // Por defecto o primera ruta de acceso
     { path: Pagina404, component: PaginaNoEncontradaComponent },
     { path: "**", redirectTo: Pagina404 } // Error 404, página no encontrada
 ];

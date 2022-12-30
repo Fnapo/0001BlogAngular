@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IEntrada } from '../../interfaces/ientrada';
 
 @Injectable({
     providedIn: 'root'
@@ -10,8 +11,14 @@ export class EntradasService {
     constructor(private httpClient: HttpClient) { }
 
     public RecuperarEntradas(): Observable<any> {
-        return this.httpClient.get("https://jsonplaceholder.typicode.com/posts"); // obtener todos
+        return this.httpClient.get("http://localhost:3000/entradas")
+        //return this.httpClient.get("assets/json/entradas.json");
     }
+
+    public RecuperarEntrada(id: number): Observable<any> {
+        return this.httpClient.get(`http://localhost:3000/entradas/${id}`);
+    }
+        //"https://jsonplaceholder.typicode.com/posts"); // obtener todos
 
         /*
         fetch('https://jsonplaceholder.typicode.com/posts/1')

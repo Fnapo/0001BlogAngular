@@ -1,6 +1,8 @@
 #nosotros {
   width: 80%;
-  margin: auto;
+  height: 74%;
+  margin: 0 auto;
+  overflow: auto;
 }
 
 #foto {

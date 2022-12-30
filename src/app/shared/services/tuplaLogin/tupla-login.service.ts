@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { TuplaLogin } from '../../classes/tuplaLogin/tupla-login';
 
 @Injectable({
     providedIn: 'root'
 })
 export class TuplaLoginService {
-    private tuplaLogin: Subject<TuplaLogin> = new Subject<TuplaLogin>();
+    private tuplaLogin: BehaviorSubject<TuplaLogin> = new BehaviorSubject<TuplaLogin>(new TuplaLogin());
     public tuplaLoginObs: Observable<TuplaLogin> = this.tuplaLogin.asObservable();
 
     constructor() { }

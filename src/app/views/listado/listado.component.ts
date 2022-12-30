@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IEntrada } from '../../shared/interfaces/ientrada';
 import { EntradasService } from '../../shared/services/entrada/entradas.service';
 
@@ -8,9 +9,9 @@ import { EntradasService } from '../../shared/services/entrada/entradas.service'
     styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-    public listadoEntradas: any; // IEntrada[];
+    public listadoEntradas: IEntrada[] = [];// any;
 
-    constructor(private entradasService: EntradasService) {
+    constructor(private entradasService: EntradasService, private router: Router) {
         /*
         this.listadoEntradas = [
             {
@@ -35,8 +36,9 @@ export class ListadoComponent implements OnInit {
 
 
 
-    public mostrarTitulo(titulo: string) {
+    public mostrarTitulo(titulo: string, id: number) {
         alert(`Título seleccionado: ${titulo}.`)
+        this.router.navigate([`/front/entradaDetalles/${id}`]);
     }
 
     private ObtenerEntradas(): void {

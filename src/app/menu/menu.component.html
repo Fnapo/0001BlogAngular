@@ -1,8 +1,12 @@
-<nav id="menu">
-  <ul>
-    <li><a routerLink="/sobreNosotros" target="_self"><span> Sobre nosotros: </span></a></li>
-    <li><a routerLink="/listado" target="_self"><span> Blog: </span></a></li>
-    <li class="float-end"><a *ngIf="token <= 0" routerLink="/login" target="_self"><span>Acceder</span></a></li>
-    <li class="float-end"><button type="button" *ngIf="token > 0"  (click)="logout()" class="float-right"><span><strong>Usuario: </strong> {{nombreUsuario}}</span></button></li>
-  </ul>
-</nav>
+
+<div id="menuContenedor">
+  <nav id="menu">
+    <ul>
+      <li><a routerLink="/front/sobreNosotros" target="_self"><span> Sobre nosotros: </span></a></li>
+      <li><a routerLink="/front/listado" target="_self"><span> Blog: </span></a></li>
+      <li class="float-end"><a *ngIf="token <= 0" routerLink="/login" target="_self"><span>Acceder</span></a></li>
+      <li class="float-end"><button type="button" *ngIf="token> 0" (click)="logout()" class="float-right"><span><strong>Usuario:
+            </strong> {{nombreUsuario}}</span></button></li>
+    </ul>
+  </nav>
+</div>

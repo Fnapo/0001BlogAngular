@@ -1,4 +1,5 @@
-<div class="entrada">
-    <h4>{{entrada.title}}</h4>
+
+<div class="entrada col-10 col-md-6" [ngClass]="entrada.id % 2 == 0 ? 'bg-light text-primary' : 'bg-success text-white'">
+    <h4>{{entrada.title | capPalabras | espejo}}</h4>
     <p>{{entrada.body}}</p>
 </div>
