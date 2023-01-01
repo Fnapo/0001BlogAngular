@@ -1,12 +1,35 @@
-
 <div id="menuContenedor">
-  <nav id="menu">
-    <ul>
-      <li><a routerLink="/front/sobreNosotros" target="_self"><span> Sobre nosotros: </span></a></li>
-      <li><a routerLink="/front/listado" target="_self"><span> Blog: </span></a></li>
-      <li class="float-end"><a *ngIf="token <= 0" routerLink="/login" target="_self"><span>Acceder</span></a></li>
-      <li class="float-end"><button type="button" *ngIf="token> 0" (click)="logout()" class="float-right"><span><strong>Usuario:
-            </strong> {{nombreUsuario}}</span></button></li>
-    </ul>
+  <nav id="menu" class="navbar py-0">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button
+      <button class="navbar-toggler px-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarExample7" aria-controls="navbarExample7" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>-->
+      <!--<div class="collapse navbar-collapse" id="navbarExample7">-->
+      <ul>
+        <li class="nav-item">
+          <a routerLink="/front/sobreNosotros" target="_self"
+            ><span>Sobre Nosotros</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLink="/front/listado" target="_self"><span>Blog</span></a>
+        </li>
+        <!--<li class="nav-item"><a routerLink="/administracion" target="_self"><span>Administración</span></a></li> desaparece por estar en otro módulo -->
+        <li class="float-end nav-item">
+          <a *ngIf="token <= 0" routerLink="/login" target="_self"
+            ><span>Acceder</span></a
+          >
+        </li>
+        <li class="float-end nav-item">
+          <button type="button" *ngIf="token > 0" (click)="Logout()">
+            <span><strong>Usuario: </strong>{{ nombreUsuario }}</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>

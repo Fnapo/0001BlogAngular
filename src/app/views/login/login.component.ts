@@ -36,7 +36,7 @@ export class LoginComponent implements AfterViewInit {
             //MenuComponent.unToken = paso;
             //MenuComponent.unNombre = this.usuario.nombre;
             this.tuplaServicio.SetTuplaLogin(paso, this.usuario.nombre);
-            this.router.navigate(["/front/listado"]);
+            this.router.navigate(["/administracion"]);
         }
         else {
             alert("Error en el nombre o la contraseña ...")

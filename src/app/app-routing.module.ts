@@ -25,6 +25,7 @@ import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-
 import { LoginComponent } from './views/login/login.component';
 import { FrontComponent } from './views/front/front.component';
 import { EntradaDetallesComponent } from './views/entrada-detalles/entrada-detalles.component';
+import { IdentificarGuard } from './shared/services/identificar/identificar.guard';
 
 let Pagina404: string = "pagina404";
 
@@ -37,8 +38,9 @@ const routes: Routes = [
             { path: "", redirectTo: 'listado', pathMatch: 'full' }
         ]
     },
+    { path: "administracion", canActivate: [IdentificarGuard], loadChildren: () => import('src/app/modulos/administracion/administracion.module').then((m) => { return m.AdministracionModule; }) },
     { path: "login", component: LoginComponent },
-    { path: "", redirectTo: "front/listado", pathMatch: "full" }, // Por defecto o primera ruta de acceso
+    { path: "", redirectTo: "/front/listado", pathMatch: "full" }, // Por defecto o primera ruta de acceso
     { path: Pagina404, component: PaginaNoEncontradaComponent },
     { path: "**", redirectTo: Pagina404 } // Error 404, página no encontrada
 ];

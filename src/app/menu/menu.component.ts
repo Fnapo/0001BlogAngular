@@ -22,7 +22,7 @@ export class MenuComponent extends TuplaLogin implements OnInit {
         });
     }
 
-    public logout(): void {
+    public Logout(): void {
         this.token = 0;
         this.nombreUsuario = "";
         this.tuplaServicio.SetTuplaLogin(this.token, this.nombreUsuario);

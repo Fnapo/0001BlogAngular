@@ -10,3 +10,11 @@ body {
   background-color: lightgray;
   color: black;
 }
+
+.indentado{
+    text-indent: 10%;
+}
+
+.texto-justificado{
+    text-align: justify;
+}

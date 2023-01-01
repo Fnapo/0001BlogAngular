@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AdministracionModule } from './modulos/administracion/administracion.module';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -12,11 +13,11 @@ import { PaginaNoEncontradaComponent } from './views/pagina-no-encontrada/pagina
 import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-nosotros.component';
 import { LoginComponent } from './views/login/login.component';
 import { EspejoPipe } from './shared/pipes/espejo/espejo.pipe';
-import { CapPalabrasPipe } from './shared/pipes/capPalabras/cap-palabras.pipe';
 import { FrontComponent } from './views/front/front.component';
 import { CabeceraComponent } from './views/cabecera/cabecera.component';
 import { PieComponent } from './views/pie/pie.component';
 import { EntradaDetallesComponent } from './views/entrada-detalles/entrada-detalles.component';
+import { BotonVolverComponent } from './views/boton-volver/boton-volver.component';
 
 @NgModule({
     declarations: [
@@ -28,17 +29,18 @@ import { EntradaDetallesComponent } from './views/entrada-detalles/entrada-detal
         AcercaDeNosotrosComponent,
         LoginComponent,
         EspejoPipe,
-        CapPalabrasPipe,
         FrontComponent,
         CabeceraComponent,
         PieComponent,
-        EntradaDetallesComponent
+        EntradaDetallesComponent,
+        BotonVolverComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        AdministracionModule
     ],
     providers: [],
     bootstrap: [AppComponent]

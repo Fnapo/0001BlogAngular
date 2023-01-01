@@ -1,0 +1,22 @@
+
+<div id="botonera" class="container d-flex justify-content-center align-items-center">
+  <app-boton-logout></app-boton-logout>
+</div>
+<div id="contenedorDash" class="container overflow-auto">
+  <table class="table table-dark">
+    <thead class="bg-primary text-white text-center sticky-top">
+      <th>Id</th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Fecha</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entrada of listadoEntradas" class="align-middle">
+        <td>{{entrada.id}}</td>
+        <td>{{entrada.title | capPalabras}}</td>
+        <td>{{entrada.autor | capPalabras}}</td>
+        <td>{{entrada.fecha}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
