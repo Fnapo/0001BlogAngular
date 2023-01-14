@@ -11,7 +11,8 @@
       <th>Fecha</th>
     </thead>
     <tbody>
-      <tr *ngFor="let entrada of listadoEntradas" class="align-middle">
+      <tr *ngFor="let entrada of listadoEntradas" class="align-middle" (click)="EditarEntrada(entrada.id)">
+        <!-- O en vez de (click)="" routerLink='editarEntrada/{{entrada.id}}'-->
         <td>{{entrada.id}}</td>
         <td>{{entrada.title | capPalabras}}</td>
         <td>{{entrada.autor | capPalabras}}</td>

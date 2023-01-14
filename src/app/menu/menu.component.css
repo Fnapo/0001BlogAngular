@@ -14,12 +14,11 @@
 #menu ul {
   list-style: none;
   width: 100%;
-  padding: 0 10px;
+  padding: 0px 10px;
   margin-bottom: 0;
 }
 
 #menu ul li {
-  color: black;
   float: left;
 }
 
@@ -27,9 +26,9 @@
   float: right;
 }
 
-#menu ul li>* {
+#menu ul li * {
   color: inherit;
-  padding: 10px 10px;
+  padding: 10px;
   display: inline-block;
 }
 
@@ -42,8 +41,17 @@
   background-color: transparent;
 }
 
-#menu ul li *:hover {
+#menu ul li.seleccionado :hover {
+  cursor: default;
+}
+
+#menu ul li:not(.seleccionado) :hover {
   background-color: brown;
+  color: white;
+}
+
+#menu ul li.seleccionado * {
+  background-color: blue;
   color: white;
 }
 

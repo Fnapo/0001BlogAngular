@@ -42,4 +42,8 @@ export class LoginComponent implements AfterViewInit {
             alert("Error en el nombre o la contraseña ...")
         }
     }
+  
+    public Volver(): void {
+      this.router.navigate(["/front/sobreNosotros"]);
+  }
 }

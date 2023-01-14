@@ -1,0 +1,100 @@
+<div
+  class="d-flex justify-content-center h-100 container align-items-center mx-auto"
+>
+  <form [formGroup]="grupoEntrada" class="col-12" (ngSubmit)="EnviarEditada()">
+    <div class="form-group mb-3">
+      <label for="titulo" class="form-label text-center col-12">Título</label>
+      <input
+        id="titulo"
+        class="form-control"
+        type="text"
+        name="titulo"
+        formControlName="titulo"
+      />
+      <div
+        *ngIf="grupoEntrada.get('titulo')?.invalid"
+        class="text-danger text-center fw-bold"
+      >
+        <div *ngIf="grupoEntrada.get('titulo')?.errors?.['required']">
+          El título es obligatotio
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="autor" class="form-label text-center col-12">Autor</label>
+      <input
+        id="autor"
+        class="form-control"
+        type="text"
+        name="autor"
+        formControlName="autor"
+      />
+      <div
+        *ngIf="grupoEntrada.get('autor')?.invalid"
+        class="text-danger text-center fw-bold"
+      >
+        <div *ngIf="grupoEntrada.get('autor')?.errors?.['required']">
+          El autor es obligatotio
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="resumen" class="form-label text-center col-12">Resumen</label>
+      <input
+        id="resumen"
+        class="form-control"
+        type="text"
+        name="resumen"
+        formControlName="resumen"
+      />
+      <div
+        *ngIf="grupoEntrada.get('resumen')?.invalid"
+        class="text-danger text-center fw-bold"
+      >
+        <div *ngIf="grupoEntrada.get('resumen')?.errors?.['required']">
+          El resumen es obligatotio
+        </div>
+        <div *ngIf="grupoEntrada.get('resumen')?.errors?.['minlength']">
+          El resumen debe tener 10 carácteres al menos
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="fecha" class="form-label text-center col-12">Fecha</label>
+      <input
+        id="fecha"
+        class="form-control"
+        type="date"
+        name="fecha"
+        formControlName="fecha"
+      />
+      <div
+        *ngIf="ErrorFecha() || grupoEntrada.get('resumen')?.errors?.['required']"
+        class="text-danger text-center fw-bold"
+      >
+        <div *ngIf="grupoEntrada.get('resumen')?.errors?.['required']">
+          La fecha es obligatotia
+        </div>
+        <div *ngIf="FechaAnterior()">
+          Fecha anterior a {{ FechaMinimaLocal }}
+        </div>
+        <div *ngIf="FechaPosterior()">Fecha posterior a {{ HoyEsLocal }}</div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-around">
+      <button
+        [disabled]="!grupoEntrada.valid || ErrorFecha()"
+        class="btn btn-primary col-3"
+        type="submit"
+      >
+        Guardar
+      </button>
+            <button (click)="Resetear()" type="button" class="btn btn-success col-3">
+        Resetear
+      </button>
+      <button (click)="Cancelar()" type="button" class="btn btn-danger col-3">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

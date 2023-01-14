@@ -10,21 +10,21 @@
       </button>-->
       <!--<div class="collapse navbar-collapse" id="navbarExample7">-->
       <ul>
-        <li class="nav-item">
+        <li class="nav-item" routerLinkActive="seleccionado">
           <a routerLink="/front/sobreNosotros" target="_self"
             ><span>Sobre Nosotros</span></a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" routerLinkActive="seleccionado">
           <a routerLink="/front/listado" target="_self"><span>Blog</span></a>
         </li>
         <!--<li class="nav-item"><a routerLink="/administracion" target="_self"><span>Administración</span></a></li> desaparece por estar en otro módulo -->
-        <li class="float-end nav-item">
+        <li class="float-end nav-item" routerLinkActive="seleccionado">
           <a *ngIf="token <= 0" routerLink="/login" target="_self"
             ><span>Acceder</span></a
           >
         </li>
-        <li class="float-end nav-item">
+        <li class="float-end nav-item" routerLinkActive="seleccionado">
           <button type="button" *ngIf="token > 0" (click)="Logout()">
             <span><strong>Usuario: </strong>{{ nombreUsuario }}</span>
           </button>

@@ -18,6 +18,7 @@ import { CabeceraComponent } from './views/cabecera/cabecera.component';
 import { PieComponent } from './views/pie/pie.component';
 import { EntradaDetallesComponent } from './views/entrada-detalles/entrada-detalles.component';
 import { BotonVolverComponent } from './views/boton-volver/boton-volver.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,7 @@ import { BotonVolverComponent } from './views/boton-volver/boton-volver.componen
         FormsModule,
         AdministracionModule
     ],
-    providers: [],
+    providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

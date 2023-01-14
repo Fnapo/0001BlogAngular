@@ -1,5 +1,9 @@
 # P001Test
 
+Este proyecto simula una API REST. Simula ya que el servidor usado es del tipo jsonplaceholder, permite leer datos, pero no modificarlos permanentemente.
+
+Puede probarse en la URL: `https://semiblogangular.000webhostapp.com`, sí, es un host gratuito.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
 
 ## Development server

@@ -6,3 +6,8 @@
 #botonera{
     height: 10vh;
 }
+
+#contenedorDash tr{
+    cursor: pointer;
+    background-color: grey;
+}
